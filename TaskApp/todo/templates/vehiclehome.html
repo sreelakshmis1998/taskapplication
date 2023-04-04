@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+{%block body%}
+<div class="container">
+    
+    <div class="row">
+        <div class="col-4">
+            <a href="{%url 'vehicle-add' %}" class="btn btn-info">Add New Vehicle</a>
+        </div>
+        <div class="col-4">
+            <a href="{%url 'vehicle-list' %}" class="btn btn-info">List All Vehicles</a>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+{%endblock%}

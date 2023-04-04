@@ -1,0 +1,24 @@
+{%extends 'index.html'%}
+{%block body%}
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-3"></div>
+    <div class="col-4">
+      <div class="card" style="width: 50%;">
+        <div class="card-body">
+          <h5 class="card-title"><b>Vehicle Name:</b> {{vehicle.vehicle_name}}</h5>
+          <p class="card-text"><b>Number:</b> {{vehicle.vehicle_number}}</p>
+          <p class="card-text"><b>Model:</b> {{vehicle.model}}</p>
+          <p class="card-text"><b>Owner:</b> {{vehicle.owner}}</p>
+          <p class="card-text"><b>KM Driven:</b> {{vehicle.km_driven}}</p>
+          <p class="card-text"><b>Date of purchase:</b> {{vehicle.purchase_date}}</p>
+          <p class="card-text"><b>Fuel Type:</b> {{vehicle.fuel_type}}</p>
+          <a href="{%url 'vehicle-list'%}" class="btn btn-primary">Back</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-3"></div>
+  </div>
+</div>
+
+{%endblock%}

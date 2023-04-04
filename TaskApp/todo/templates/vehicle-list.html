@@ -1,0 +1,55 @@
+{%extends 'base.html'%}
+{%block body%}
+<div class="container">
+  <div class="row">
+    <div class="col-4"></div>
+    <div class="col-6">
+      {%if messages%}
+      {%for m in messages%}
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong></strong>{{m}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      {%endfor%}
+      {%endif%}
+    </div>
+    <div class="col-4"></div>
+  </div>
+</div>
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <table class="table table-striped">
+        <tr>
+          <th>Vehicle Name</th>
+          <th>Vehicle Number</th>
+          <th>Model</th>
+          <th>Owner</th>
+          <th>Kilometer Driven</th>
+          <th>Date of Purchase</th>
+          <th>Fuel Type</th>
+          <th>Action</th>
+        </tr>
+        {%for v in vehicle%}
+        <tr>
+          <td>{{v.vehicle_name}}</td>
+          <td>{{v.vehicle_number}}</td>
+          <td>{{v.model}}</td>
+          <td>{{v.owner}}</td>
+          <td>{{v.km_driven}}</td>
+          <td>{{v.purchase_date}}</td>
+          <td>{{v.fuel_type}}</td>
+          <td>
+            <a href="{%url 'vehicle-detail' v.id%}" class="btn btn-outline-info">View</a>
+            <a href="{%url 'vehicle-delete' v.id%}" class="btn btn-outline-danger">Delete</a>
+            <a href="{%url 'vehicle-edit' v.id%}" class="btn btn-outline-primary">Edit</a>
+          </td>
+        </tr>
+        {%endfor%}
+      </table>
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>
+{%endblock%}
